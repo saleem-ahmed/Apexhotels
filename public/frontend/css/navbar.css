@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* UTILITIES */
+:root{
+    /* --p-color: #8cd018; */
+    --p-color: #0B50AB;
+
+    --i-color: invert(20%) sepia(93%) saturate(1533%) hue-rotate(196deg) brightness(101%) contrast(96%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.mt-2 {
+    margin-top: 20px;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+.active-nav {
+    color: var(--p-color) !important;
+}
+button {
+    padding: 10px 18px;
+    transition: 0.3s;
+    background-color: var(--p-color);
+    color: #ffffff;
+    border-radius: 30px;
+    border: 1px solid var(--p-color);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    box-shadow: -1px 0px 6px var(--p-color);
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ffffff;
+    color: var(--p-color);
+}
+
+img {
+    object-fit: contain;
+}
+@media screen and (max-width: 1025px) {
+    button {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 992px) {
+    button {
+        padding: 10px 5px;
+    }
+}
+/* NAVBAR STYLING STARTS */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    z-index: 5;
+    width: 100%;
+    padding: 7px 90px;
+    margin: 0% auto;
+    position: sticky;
+    top: 0;
+}
+.nav-links a {
+    color: #414e5e;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+/* LOGO */
+.navbar .logo {
+    width: fit-content;
+}
+.navbar .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.navbar .logo img {
+    width: 180px;
+}
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-block {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    padding: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-block {
+    display: block !important;
+}
+
+/* NAVBAR MENU */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: 16px;
+}
+.menu li:hover a {
+    color: var(--p-color);
+}
+.menu li {
+    padding: 5px 0px;
+    transition: 0.3s;
+}
+/* .menu button{
+    padding: 10px 18px;
+    transition: 0.3s;
+    background-color: #8cd018;
+    color: #ffffff;
+    border-radius: 30px;
+    border: 1px solid #8cd018;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+} */
+
+/* CHECKBOX HACK */
+input[type="checkbox"] {
+    display: none;
+}
+/*HAMBURGER MENU*/
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+#checkbox_toggle {
+    display: none;
+}
+/* APPLYING MEDIA QUERIES */
+@media screen and (max-width: 1025px) {
+    .nav-links a {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .navbar .logo img {
+        width: 130px;
+    }
+}
+@media (max-width: 889px) {
+    .menu li {
+        padding: unset;
+    }
+}
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: flex;
+        justify-content: end;
+    }
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: #ffffff;
+        right: 0;
+        left: 0;
+        top: 75px;
+        text-align: center;
+        padding: 16px 0;
+        -webkit-box-shadow: 1px 4px 11px -2px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 1px 4px 11px -2px rgba(0, 0, 0, 0.75);
+        box-shadow: 1px 4px 11px -2px rgba(0, 0, 0, 0.75);
+    }
+    .menu li:hover {
+        /* display: inline-block; */
+        /* transition: 0.3s ease; */
+    }
+    .menu li + li {
+        margin-top: 12px;
+    }
+    input[type="checkbox"]:checked ~ .menu {
+        display: block;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 668px) {
+    .navbar {
+        padding: 4px 23px;
+    }
+}
+
+/* footer */
+
+.footer {
+    padding: 49px 90px;
+    display: flex;
+    /* align-items: center; */
+}
+.footer a {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #414e5e;
+}
+.footer a img {
+    margin-right: 5px;
+}
+.footer a:hover img {
+    filter: var(--i-color);
+}
+.footer a:hover {
+    color: var(--p-color);
+}
+.footer .footer-logo {
+    width: 320.14px;
+    margin-right: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .footer-logo img {
+    height: 91px;
+    width: 90%;
+}
+.footer .footer-pages {
+    margin: 0px 10px;
+}
+.footer .footer-pages li {
+    margin: 8px 0px;
+}
+.footer .footer-pages h3 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    color: #414e5e;
+    margin-bottom: 12px;
+}
+
+@media screen and (max-width: 769px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer .footer-logo {
+        width: 60%;
+        margin-right: 0px;
+    }
+    .footer .footer-pages {
+        width: 100%;
+        margin: 10px 0px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .footer .footer-pages li {
+        margin: 0px 0px;
+    }
+}
+@media screen and (max-width: 668px) {
+    .footer {
+        padding: 49px 23px;
+    }
+}
+
+/* 7777777777777777 */
+.Check{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 15%);
+    top: 100%;
+    width: 90%;
+    display: none;
+}
+.Check .checks {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f6f8fa;
+    border-radius: 30px;
+}
+.Check .check-in {
+    display: flex;
+    flex-direction: column;
+}
+.Check .check-in label {
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #414e5e;
+}
+
+.Check .check-in input
+ {
+    width: 100%;
+    background: #ffffff;
+    box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    border: none;
+    height: 42px;
+    padding: 11px 30px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.005em;
+    color: #808893;
+    outline: none;
+}
+.Check .check-in select{
+    width: 100%;
+    background: #ffffff;
+    box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    border: none;
+    height: 42px;
+    padding: 11px 0px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.005em;
+    color: #808893;
+    outline: none;
+}
+.Check button a {
+    color: #ffffff;
+}
+.Check button:hover a {
+    color: #8cd018;
+}
+@media screen and (max-width: 769px) {
+    .Check .checks{
+        display: flex;
+        flex-direction: column !important;
+        gap: 12px;
+    }
+}
+/* 8888888888888 */
